@@ -1,0 +1,9 @@
+# Службові файли macOS і Windows
+.DS_Store
+Thumbs.db
+
+# Локальні налаштування VS Code
+.vscode/
+
+# Логи
+*.log
