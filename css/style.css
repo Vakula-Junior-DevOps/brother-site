@@ -37,9 +37,7 @@
 
   /* Ширина вмісту і висота шапки */
   --content-width: 70rem;
-  /* На телефоні меню переноситься під логотип, тож шапка вища.
-     На Етапі 3 (бургер-меню) це значення зменшимо. */
-  --header-height: 6rem;
+  --header-height: 4.5rem;
 }
 
 
@@ -175,7 +173,6 @@ main > section {
   z-index: 10;                    /* поверх решти вмісту */
 
   display: flex;                  /* елементи в рядок */
-  flex-wrap: wrap;                /* якщо не влазять — переносяться */
   align-items: center;
   justify-content: space-between; /* логотип ліворуч, меню праворуч */
   gap: var(--space-xs) var(--space-m);
@@ -187,6 +184,10 @@ main > section {
 }
 
 .logo {
+  /* На дуже вузькому екрані назва переноситься на 2 рядки,
+     а не виштовхує кнопку меню за край */
+  min-inline-size: 0;
+  line-height: 1.2;
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--color-primary);
@@ -210,6 +211,73 @@ main > section {
 .main-menu a:hover {
   color: var(--color-accent);
   background-color: var(--color-bg-alt);
+}
+
+/* Кнопка-«бургер» */
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  min-block-size: 2.75rem;        /* зручно натискати пальцем (≥ 44px) */
+  padding: var(--space-xs) var(--space-s);
+  font: inherit;                  /* кнопки типово мають свій шрифт — беремо сайтовий */
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.menu-toggle:hover {
+  background-color: var(--color-bg-alt);
+}
+.menu-toggle:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+/* Атрибут hidden має ховати кнопку, навіть попри display вище */
+.menu-toggle[hidden] {
+  display: none;
+}
+
+/* Іконки: закрите меню — «три смужки», відкрите — «хрестик» */
+.menu-toggle[aria-expanded="false"] .icon-close,
+.menu-toggle[aria-expanded="true"] .icon-open {
+  display: none;
+}
+
+/* Лише на вузьких екранах (до 40em): меню випадає під шапкою */
+@media (max-width: 39.99em) {
+  .main-menu {
+    /* Панель на всю ширину одразу під шапкою.
+       Відлік від шапки, бо в неї position: sticky. */
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: var(--space-xs) var(--space-s) var(--space-s);
+    background-color: var(--color-bg);
+    border-block-end: 1px solid var(--color-border);
+    box-shadow: var(--shadow);
+  }
+  .main-menu a {
+    padding: var(--space-s);      /* великі пункти для пальця */
+    font-size: 1.1rem;
+  }
+
+  /* Коли JS показав кнопку і меню закрите — ховаємо список.
+     «+» означає «елемент одразу після кнопки». */
+  .menu-toggle:not([hidden])[aria-expanded="false"] + .main-menu {
+    display: none;
+  }
+}
+
+/* Широкі екрани: кнопка не потрібна, меню завжди в рядок */
+@media (min-width: 40em) {
+  .menu-toggle {
+    display: none;
+  }
 }
 
 
@@ -378,9 +446,6 @@ main > section {
 
 /* Від 40em (≈640px): планшет — 2 колонки карток */
 @media (min-width: 40em) {
-  :root {
-    --header-height: 4.5rem;      /* логотип і меню вже в один рядок */
-  }
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }

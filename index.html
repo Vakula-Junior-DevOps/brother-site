@@ -24,7 +24,22 @@
 
     <!-- Головна навігація; aria-label дає назву для читачів екрана -->
     <nav aria-label="Hauptmenü">
-      <ul class="main-menu">
+      <!-- Кнопка-«бургер» для телефонів.
+           hidden — без JavaScript кнопка схована, а меню просто видно завжди.
+           aria-expanded — чи відкрите меню (JS перемикає true/false).
+           aria-controls — яким елементом кнопка керує (id списку нижче). -->
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" hidden>
+        <!-- Іконки суто декоративні, тому aria-hidden; назву кнопці дає текст «Menü» -->
+        <svg class="icon-open" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-close" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Menü</span>
+      </button>
+
+      <ul class="main-menu" id="main-menu">
         <li><a href="#home">Start</a></li>
         <li><a href="#services">Leistungen</a></li>
         <li><a href="#contact">Kontakt</a></li>
