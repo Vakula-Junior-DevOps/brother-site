@@ -188,14 +188,17 @@ main > section {
 }
 
 .logo {
-  /* На дуже вузькому екрані назва переноситься на 2 рядки,
-     а не виштовхує кнопку меню за край */
+  /* min-inline-size: 0 — на дуже вузькому екрані логотип може стиснутись,
+     а не виштовхнути кнопку меню за край */
   min-inline-size: 0;
-  line-height: 1.2;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  text-decoration: none;
+  border-radius: var(--radius);
+}
+/* Висота логотипу задається тут, ширина рахується сама з пропорцій файлу */
+.logo img {
+  block-size: 3rem;
+  inline-size: auto;
+  object-fit: contain;            /* якщо стиснеться — без спотворення пропорцій */
+  object-position: left center;
 }
 
 .main-menu {

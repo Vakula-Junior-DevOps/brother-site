@@ -1,6 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-  <!-- Іконка сайту (favicon)-заглушка: літера «H» на фірмовому синьому. Замінити логотипом на Етапі 7. -->
-  <rect width="32" height="32" rx="6" fill="#1f3a5f"/>
-  <path d="M9 8h4v6h6V8h4v16h-4v-6h-6v6H9z" fill="#ffffff"/>
-  <rect x="9" y="26" width="14" height="2" fill="#e07a1f"/>
+  <!-- Іконка сайту (favicon): знак FokusHaus — дах і літери «FH» на темно-синьому -->
+  <rect width="32" height="32" rx="6" fill="#1b2d4f"/>
+  <path d="M4 12L16 3l12 9" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M5 14h8v3H8.5v2.5H12v3H8.5V28H5z" fill="#ffffff"/>
+  <path d="M15 14h3.5v5.5h5V14H27v14h-3.5v-5.5h-5V28H15z" fill="#6ab023"/>
 </svg>

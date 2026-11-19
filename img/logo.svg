@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="290" height="80" viewBox="0 0 290 80">
+  <!-- Логотип FokusHaus (горизонтальний варіант для шапки сайту).
+       Відтворено за брендуванням авто. Якщо в брата з'явиться оригінальний
+       файл логотипу (SVG від дизайнера) — замінити цим файлом. -->
+
+  <!-- Знак: дах будинку з димарем і віконцем, під ним літери «FH» -->
+  <path d="M6 36L40 9l34 27" fill="none" stroke="#1b2d4f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="57" y="12" width="8" height="15" fill="#1b2d4f"/>
+  <g fill="#6ab023">
+    <rect x="35" y="22" width="4.5" height="4.5"/>
+    <rect x="40.5" y="22" width="4.5" height="4.5"/>
+    <rect x="35" y="27.5" width="4.5" height="4.5"/>
+    <rect x="40.5" y="27.5" width="4.5" height="4.5"/>
+  </g>
+  <text x="40" y="74" text-anchor="middle" font-family="system-ui, 'Segoe UI', Roboto, sans-serif" font-size="40" font-weight="900" font-style="italic"><tspan fill="#1b2d4f">F</tspan><tspan fill="#6ab023">H</tspan></text>
+
+  <!-- Назва і підпис -->
+  <text x="88" y="45" font-family="system-ui, 'Segoe UI', Roboto, sans-serif" font-size="33" font-weight="800" font-style="italic" letter-spacing="-0.5"><tspan fill="#1b2d4f">Fokus</tspan><tspan fill="#6ab023">Haus</tspan></text>
+  <text x="90" y="66" font-family="system-ui, 'Segoe UI', Roboto, sans-serif" font-size="11.5" font-weight="700" letter-spacing="2.4" fill="#1b2d4f">HAUSMEISTERSERVICE</text>
+</svg>
