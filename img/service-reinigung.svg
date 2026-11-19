@@ -1,6 +1,29 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <!-- Фото-заглушка: сірий прямокутник з підписом. Замінити справжнім фото на Етапі 7. -->
-  <rect width="800" height="600" fill="#d9d9d9"/>
-  <text x="400" y="300" font-family="system-ui, sans-serif" font-size="44" fill="#444" text-anchor="middle" dominant-baseline="middle">Treppenhausreinigung</text>
-  <text x="400" y="360" font-family="system-ui, sans-serif" font-size="24" fill="#666" text-anchor="middle">Platzhalterbild 800 × 600</text>
+  <!-- Ілюстрація «Treppenhausreinigung»: сходи, мітла, відро й іскорки чистоти -->
+  <rect width="800" height="600" fill="#eaf0f6"/>
+  <circle cx="400" cy="300" r="230" fill="#d6e1ec"/>
+
+  <!-- Сходи -->
+  <path d="M170 480V400h80v-60h80v-60h80v-60h80v260z" fill="#3d5f8a"/>
+  <path d="M170 400h80M250 340h80M330 280h80M410 220h80" stroke="#1f3a5f" stroke-width="8" stroke-linecap="round"/>
+  <!-- Перила -->
+  <path d="M190 360L470 180" stroke="#9aa5b1" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Відро -->
+  <path d="M520 380h110l-14 100h-82z" fill="#e07a1f"/>
+  <path d="M530 380q45-60 90 0" fill="none" stroke="#1f3a5f" stroke-width="6"/>
+  <ellipse cx="575" cy="380" rx="55" ry="10" fill="#5b9bd5"/>
+
+  <!-- Мітла -->
+  <g transform="translate(620 480) rotate(-18)">
+    <rect x="-6" y="-260" width="12" height="200" rx="6" fill="#1f3a5f"/>
+    <path d="M-34 -64h68l14 64h-96z" fill="#f3b27a"/>
+    <path d="M-24 -40v34M-8 -40v38M8 -40v38M24 -40v34" stroke="#e07a1f" stroke-width="4"/>
+  </g>
+
+  <!-- Іскорки -->
+  <g fill="#ffffff">
+    <path d="M270 210l8 20 20 8-20 8-8 20-8-20-20-8 20-8z"/>
+    <path d="M520 190l6 14 14 6-14 6-6 14-6-14-14-6 14-6z"/>
+  </g>
 </svg>

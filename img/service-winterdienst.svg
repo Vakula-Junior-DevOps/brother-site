@@ -1,6 +1,26 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <!-- Фото-заглушка: сірий прямокутник з підписом. Замінити справжнім фото на Етапі 7. -->
-  <rect width="800" height="600" fill="#d9d9d9"/>
-  <text x="400" y="300" font-family="system-ui, sans-serif" font-size="44" fill="#444" text-anchor="middle" dominant-baseline="middle">Winterdienst</text>
-  <text x="400" y="360" font-family="system-ui, sans-serif" font-size="24" fill="#666" text-anchor="middle">Platzhalterbild 800 × 600</text>
+  <!-- Ілюстрація «Winterdienst»: сніжинки, замет і лопата для снігу -->
+  <rect width="800" height="600" fill="#eaf0f6"/>
+  <circle cx="400" cy="300" r="230" fill="#c9d8e8"/>
+
+  <!-- Сніжинки -->
+  <g stroke="#5b8cc0" stroke-width="6" stroke-linecap="round" fill="none">
+    <path transform="translate(270 170)" d="M0-32V32M-28-16L28 16M-28 16L28-16"/>
+    <path transform="translate(380 150) scale(0.7)" d="M0-32V32M-28-16L28 16M-28 16L28-16"/>
+    <path transform="translate(600 260) scale(0.5)" d="M0-32V32M-28-16L28 16M-28 16L28-16"/>
+    <path transform="translate(200 290) scale(0.5)" d="M0-32V32M-28-16L28 16M-28 16L28-16"/>
+  </g>
+
+  <!-- Замет і розчищена доріжка -->
+  <path d="M120 480q90-90 190-40q60-40 110 10v30H120z" fill="#ffffff"/>
+  <rect x="120" y="470" width="560" height="20" rx="4" fill="#9aa5b1"/>
+  <path d="M520 470q60-30 160-10v10z" fill="#ffffff"/>
+
+  <!-- Лопата -->
+  <g transform="translate(470 300) rotate(25)">
+    <rect x="-8" y="-150" width="16" height="200" rx="8" fill="#1f3a5f"/>
+    <rect x="-34" y="-170" width="68" height="24" rx="12" fill="#1f3a5f"/>
+    <path d="M-62 40h124l-14 96h-96z" fill="#e07a1f"/>
+    <path d="M-48 112h96" stroke="#f3b27a" stroke-width="6" stroke-linecap="round"/>
+  </g>
 </svg>

@@ -1,6 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
-  <!-- Фото-заглушка: сірий прямокутник з підписом. Замінити справжнім фото на Етапі 7. -->
-  <rect width="800" height="600" fill="#d9d9d9"/>
-  <text x="400" y="300" font-family="system-ui, sans-serif" font-size="44" fill="#444" text-anchor="middle" dominant-baseline="middle">Entrümpelung</text>
-  <text x="400" y="360" font-family="system-ui, sans-serif" font-size="24" fill="#666" text-anchor="middle">Platzhalterbild 800 × 600</text>
+  <!-- Ілюстрація «Entrümpelung»: стос коробок на візку -->
+  <rect width="800" height="600" fill="#eaf0f6"/>
+  <circle cx="400" cy="300" r="230" fill="#d6e1ec"/>
+  <!-- Підлога -->
+  <rect x="120" y="470" width="560" height="10" rx="5" fill="#9aa5b1"/>
+
+  <!-- Візок -->
+  <path d="M300 160v290h170" fill="none" stroke="#1f3a5f" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="330" cy="462" r="20" fill="#1f3a5f"/>
+  <circle cx="330" cy="462" r="7" fill="#9aa5b1"/>
+
+  <!-- Коробки -->
+  <g>
+    <rect x="316" y="340" width="150" height="104" rx="6" fill="#d89a5b"/>
+    <rect x="378" y="340" width="26" height="104" fill="#f3b27a"/>
+    <rect x="326" y="246" width="128" height="94" rx="6" fill="#c9844a"/>
+    <rect x="377" y="246" width="26" height="94" fill="#f3b27a"/>
+    <rect x="340" y="176" width="100" height="70" rx="6" fill="#d89a5b"/>
+    <rect x="378" y="176" width="24" height="70" fill="#f3b27a"/>
+  </g>
+
+  <!-- Окрема коробка на підлозі та стрілка «винести» -->
+  <rect x="520" y="390" width="110" height="80" rx="6" fill="#c9844a"/>
+  <rect x="562" y="390" width="24" height="80" fill="#f3b27a"/>
+  <path d="M510 250h110" stroke="#e07a1f" stroke-width="14" stroke-linecap="round"/>
+  <path d="M600 222l34 28-34 28" fill="none" stroke="#e07a1f" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
