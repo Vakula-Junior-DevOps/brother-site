@@ -18,14 +18,14 @@
 ---
 
 ## Етап 1 — HTML-каркас
-- [ ] Базовий шаблон `index.html`: `<!DOCTYPE html>`, `lang="de"`, `meta charset`, `meta viewport`, `title`, `meta description`, підключення `css/style.css` і `js/main.js` (`defer`)
-- [ ] `header` з назвою/логотипом-заглушкою та `nav` з посиланнями на `#home`, `#services`, `#contact`
-- [ ] `section#home`: заголовок `h1`, короткий підзаголовок, кнопка «Kontakt» (веде на `#contact`)
-- [ ] `section#services`: заголовок `h2` і 6 карток (`article`): фото-заглушка, `h3`, опис
-- [ ] `section#contact`: телефон (`tel:`), email (`mailto:`), WhatsApp (`https://wa.me/...`), адреса, години роботи (усе тестове)
-- [ ] `footer`: © рік, посилання на `impressum.html` і `datenschutz.html`
-- [ ] SVG-заглушки для фото в `img/`
-- [ ] Пояснити кожен використаний тег
+- [x] Базовий шаблон `index.html`: `<!DOCTYPE html>`, `lang="de"`, `meta charset`, `meta viewport`, `title`, `meta description`, підключення `css/style.css` і `js/main.js` (`defer`)
+- [x] `header` з назвою/логотипом-заглушкою та `nav` з посиланнями на `#home`, `#services`, `#contact`
+- [x] `section#home`: заголовок `h1`, короткий підзаголовок, кнопка «Kontakt» (веде на `#contact`)
+- [x] `section#services`: заголовок `h2` і 6 карток (`article`): фото-заглушка, `h3`, опис
+- [x] `section#contact`: телефон (`tel:`), email (`mailto:`), WhatsApp (`https://wa.me/...`), адреса, години роботи (усе тестове)
+- [x] `footer`: © рік, посилання на `impressum.html` і `datenschutz.html`
+- [x] SVG-заглушки для фото в `img/`
+- [x] Пояснити кожен використаний тег
 
 **✅ Готово, коли:** без жодного дизайну кліки в меню прокручують до потрібного розділу, а посилання у футері відкривають (поки порожні) сторінки.
 
@@ -90,7 +90,7 @@
 
 ---
 
-## Етап 7 — Справжній контент (коли брат визначиться з тематикою)
+## Етап 7 — Справжній контент (тематика: Hausmeisterservice)
 - [ ] 👤 Отримати від брата тексти, фото, контакти, назву, побажання щодо кольорів
 - [ ] Замінити заглушки, оновити `title` і `meta description`
 - [ ] Оптимізувати фото: формат WebP, ширина до ~1600px, `loading="lazy"` для фото нижче першого екрана
@@ -104,3 +104,5 @@
 ## Журнал змін
 <!-- Агент додає сюди рядок після кожного завершеного етапу: дата — етап — що зроблено -->
 - 2026-11-17 — Етап 0 — структура файлів, .gitignore, README, git init + origin, перший коміт
+- 2026-11-19 — Тема: Hausmeisterservice (оновлено CLAUDE.md, PLAN.md)
+- 2026-11-19 — Етап 1 — HTML-каркас index.html (шапка, 3 розділи, футер), 6 SVG-заглушок послуг
