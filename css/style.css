@@ -10,9 +10,12 @@
    достатньо поміняти значення тут. */
 :root {
   /* Кольори */
-  --color-primary: #1f3a5f;       /* темно-синій: заголовки, підвал */
-  --color-accent: #b85c00;        /* помаранчевий: кнопки, акценти */
-  --color-accent-dark: #8f4700;   /* темніший помаранчевий: кнопка при наведенні */
+  /* Фірмові кольори: темно-синій і зелений (як на брендуванні авто) */
+  --color-primary: #1b2d4f;       /* темно-синій: заголовки, підвал */
+  --color-brand-green: #6ab023;   /* яскраво-зелений: ЛИШЕ декор (смужки, іконки).
+                                     Для тексту на білому замалий контраст (2.7:1) */
+  --color-accent: #3b7a1c;        /* темніший зелений: кнопки, посилання (5.3:1 на білому) */
+  --color-accent-dark: #2e6115;   /* ще темніший зелений: кнопка при наведенні */
   --color-text: #1d232a;          /* основний текст */
   --color-text-muted: #4a5561;    /* другорядний текст */
   --color-bg: #ffffff;            /* фон сторінки */
@@ -180,7 +183,8 @@ main > section {
   padding: var(--space-xs) max(var(--space-s), (100% - var(--content-width)) / 2);
 
   background-color: var(--color-bg);
-  border-block-end: 1px solid var(--color-border);
+  /* Зелена смужка під шапкою — як фірмова смуга на авто */
+  border-block-end: 4px solid var(--color-brand-green);
 }
 
 .logo {
@@ -301,7 +305,7 @@ main > section {
      добре читався. Останнє значення — колір на випадок, якщо картинка
      не завантажиться. */
   background:
-    linear-gradient(rgb(15 30 50 / 0.65), rgb(15 30 50 / 0.65)),
+    linear-gradient(rgb(20 34 62 / 0.7), rgb(20 34 62 / 0.7)),
     url("../img/hero.svg") center / cover no-repeat,
     var(--color-primary);
   color: var(--color-on-dark);
@@ -426,6 +430,7 @@ main > section {
   gap: var(--space-s);
   padding: var(--space-m) max(var(--space-s), (100% - var(--content-width)) / 2);
   background-color: var(--color-primary);
+  border-block-start: 4px solid var(--color-brand-green);
   color: var(--color-on-dark);
 }
 .footer-menu {

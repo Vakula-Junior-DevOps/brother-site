@@ -18,9 +18,9 @@
 
   <!-- Лопата -->
   <g transform="translate(470 300) rotate(25)">
-    <rect x="-8" y="-150" width="16" height="200" rx="8" fill="#1f3a5f"/>
-    <rect x="-34" y="-170" width="68" height="24" rx="12" fill="#1f3a5f"/>
-    <path d="M-62 40h124l-14 96h-96z" fill="#e07a1f"/>
-    <path d="M-48 112h96" stroke="#f3b27a" stroke-width="6" stroke-linecap="round"/>
+    <rect x="-8" y="-150" width="16" height="200" rx="8" fill="#1b2d4f"/>
+    <rect x="-34" y="-170" width="68" height="24" rx="12" fill="#1b2d4f"/>
+    <path d="M-62 40h124l-14 96h-96z" fill="#6ab023"/>
+    <path d="M-48 112h96" stroke="#b6dc8a" stroke-width="6" stroke-linecap="round"/>
   </g>
 </svg>

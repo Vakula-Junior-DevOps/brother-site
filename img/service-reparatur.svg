@@ -9,13 +9,13 @@
   </g>
 
   <!-- Кран -->
-  <rect x="200" y="190" width="56" height="120" rx="10" fill="#3d5f8a"/>
-  <rect x="240" y="226" width="210" height="46" rx="12" fill="#1f3a5f"/>
-  <rect x="408" y="226" width="46" height="96" rx="12" fill="#1f3a5f"/>
-  <rect x="404" y="312" width="54" height="16" rx="6" fill="#3d5f8a"/>
+  <rect x="200" y="190" width="56" height="120" rx="10" fill="#34507e"/>
+  <rect x="240" y="226" width="210" height="46" rx="12" fill="#1b2d4f"/>
+  <rect x="408" y="226" width="46" height="96" rx="12" fill="#1b2d4f"/>
+  <rect x="404" y="312" width="54" height="16" rx="6" fill="#34507e"/>
   <!-- Ручка крана -->
-  <rect x="318" y="196" width="18" height="34" fill="#e07a1f"/>
-  <rect x="288" y="180" width="78" height="22" rx="10" fill="#e07a1f"/>
+  <rect x="318" y="196" width="18" height="34" fill="#6ab023"/>
+  <rect x="288" y="180" width="78" height="22" rx="10" fill="#6ab023"/>
 
   <!-- Краплі -->
   <path d="M431 348c-10 16-16 24-16 32a16 16 0 0 0 32 0c0-8-6-16-16-32z" fill="#5b9bd5"/>
@@ -28,7 +28,7 @@
     <circle cx="214" cy="0" r="8" fill="#000"/>
   </mask>
   <g transform="translate(470 440) rotate(-30)">
-    <g mask="url(#wrench-cut)" fill="#e07a1f">
+    <g mask="url(#wrench-cut)" fill="#6ab023">
       <circle cx="0" cy="0" r="48"/>
       <rect x="20" y="-17" width="214" height="34" rx="17"/>
     </g>

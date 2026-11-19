@@ -21,9 +21,9 @@
   <g transform="translate(560 330) rotate(-20) scale(1.35)">
     <path d="M-8 0L-120 -22l4-16L0 -10z" fill="#9aa5b1"/>
     <path d="M-8 0L-120 22l4 16L0 10z" fill="#c3ccd5"/>
-    <circle cx="0" cy="0" r="10" fill="#1f3a5f"/>
-    <rect x="6" y="-30" width="110" height="22" rx="11" fill="#e07a1f" transform="rotate(12)"/>
-    <rect x="6" y="8" width="110" height="22" rx="11" fill="#e07a1f" transform="rotate(-12)"/>
+    <circle cx="0" cy="0" r="10" fill="#1b2d4f"/>
+    <rect x="6" y="-30" width="110" height="22" rx="11" fill="#1b2d4f" transform="rotate(12)"/>
+    <rect x="6" y="8" width="110" height="22" rx="11" fill="#1b2d4f" transform="rotate(-12)"/>
   </g>
 
   <!-- Обрізане листя -->
