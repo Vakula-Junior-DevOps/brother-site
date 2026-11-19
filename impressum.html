@@ -1,15 +1,77 @@
 <!DOCTYPE html>
-<!-- Заготовка. Структура з плейсхолдерами буде на Етапі 4. -->
+<!-- Сторінка Impressum (обов'язкова в Німеччині). Шапка й підвал — копія з index.html. -->
 <html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Impressum</title>
+  <title>Impressum – Hausmeisterservice Muster</title>
+  <meta name="description" content="Impressum von Hausmeisterservice Muster.">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <h1>Impressum</h1>
-  <p>[HIER TEXT AUS DEM GENERATOR EINFÜGEN]</p>
-  <p><a href="index.html">Zurück zur Startseite</a></p>
+
+  <!-- ШАПКА: така сама, як на головній, але посилання ведуть на index.html -->
+  <header class="site-header">
+    <a class="logo" href="index.html">Hausmeisterservice Muster</a>
+
+    <nav aria-label="Hauptmenü">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu" hidden>
+        <svg class="icon-open" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-close" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <span>Menü</span>
+      </button>
+
+      <ul class="main-menu" id="main-menu">
+        <li><a href="index.html#home">Start</a></li>
+        <li><a href="index.html#services">Leistungen</a></li>
+        <li><a href="index.html#contact">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="legal">
+      <h1>Impressum</h1>
+
+      <!-- ЗАГЛУШКИ. Нічого тут не вигадуємо: дані й текст вставляє власник. -->
+      <h2>Anbieter</h2>
+      <p>
+        [NAME]<br>
+        [ADRESSE]
+      </p>
+
+      <h2>Kontakt</h2>
+      <p>
+        Telefon: [TELEFON]<br>
+        E-Mail: [E-MAIL]
+      </p>
+
+      <!-- Сюди вставити ВЕСЬ текст, згенерований на e-recht24.de (або іншому генераторі).
+           Якщо в згенерованому тексті вже є ім'я, адреса й контакти —
+           блоки «Anbieter» і «Kontakt» вище можна видалити. -->
+      <div class="legal-text">
+        <p class="placeholder">[HIER TEXT AUS DEM GENERATOR EINFÜGEN]</p>
+      </div>
+
+      <p><a href="index.html">← Zurück zur Startseite</a></p>
+    </section>
+  </main>
+
+  <!-- ПІДВАЛ: aria-current="page" позначає поточну сторінку -->
+  <footer class="site-footer">
+    <p>&copy; 2026 Hausmeisterservice Muster</p>
+    <nav aria-label="Rechtliches">
+      <ul class="footer-menu">
+        <li><a href="impressum.html" aria-current="page">Impressum</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </nav>
+  </footer>
+
 </body>
 </html>

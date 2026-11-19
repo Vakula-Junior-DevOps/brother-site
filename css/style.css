@@ -442,6 +442,53 @@ main > section {
 }
 
 
+/* ---------- 9a. Юридичні сторінки (Impressum, Datenschutz) ---------- */
+
+.legal {
+  /* Висота щонайменше на весь екран, щоб підвал не «висів» посередині */
+  min-block-size: calc(100vh - var(--header-height));
+  min-block-size: calc(100dvh - var(--header-height));
+}
+/* Довгий юридичний текст: обмежуємо довжину рядка, щоб легко читалось */
+.legal > *,
+.legal-text > * {
+  max-inline-size: 70ch;
+}
+.legal h1 {
+  margin-block-end: var(--space-l);
+}
+.legal h2 {
+  margin-block: var(--space-l) var(--space-s);
+  font-size: clamp(1.3rem, 1.1rem + 1vw, 1.75rem);
+}
+.legal h3 {
+  margin-block: var(--space-m) var(--space-xs);
+}
+.legal p,
+.legal ul {
+  margin-block-end: var(--space-s);
+}
+/* Довгі посилання та адреси з генератора не вилазять за екран */
+.legal-text {
+  overflow-wrap: anywhere;
+}
+
+/* Помітна рамка навколо заглушки — щоб не забути її замінити */
+.placeholder {
+  padding: var(--space-m);
+  border: 2px dashed var(--color-accent);
+  border-radius: var(--radius);
+  color: var(--color-accent-dark);
+  font-weight: 600;
+}
+
+/* Поточна сторінка в підвалі: жирним (не лише кольором) */
+.site-footer [aria-current="page"] {
+  font-weight: 700;
+  text-decoration-thickness: 2px;
+}
+
+
 /* ---------- 10. Більші екрани ---------- */
 
 /* Від 40em (≈640px): планшет — 2 колонки карток */
