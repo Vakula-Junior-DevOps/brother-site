@@ -1,2 +1,412 @@
-/* Головний файл стилів сайту.
-   Наповнюємо на Етапі 2 (mobile-first, CSS-змінні в :root). */
+/* =========================================================
+   Головний файл стилів сайту.
+   Підхід mobile-first: спершу стилі для телефона,
+   нижче — доповнення для ширших екранів у @media.
+   ========================================================= */
+
+
+/* ---------- 1. Змінні (тема сайту) ----------
+   Щоб змінити кольори, шрифти чи відступи всього сайту,
+   достатньо поміняти значення тут. */
+:root {
+  /* Кольори */
+  --color-primary: #1f3a5f;       /* темно-синій: заголовки, підвал */
+  --color-accent: #b85c00;        /* помаранчевий: кнопки, акценти */
+  --color-accent-dark: #8f4700;   /* темніший помаранчевий: кнопка при наведенні */
+  --color-text: #1d232a;          /* основний текст */
+  --color-text-muted: #4a5561;    /* другорядний текст */
+  --color-bg: #ffffff;            /* фон сторінки */
+  --color-bg-alt: #f2f4f7;        /* світло-сірий фон розділу послуг */
+  --color-border: #d5dbe2;        /* тонкі лінії */
+  --color-on-dark: #ffffff;       /* текст на темному фоні */
+
+  /* Шрифти: системні, нічого не завантажуємо з інтернету */
+  --font-base: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  /* Відступи (1rem = базовий розмір шрифту браузера, зазвичай 16px) */
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 3rem;
+  --space-xl: 5rem;
+
+  /* Радіуси заокруглень і тінь */
+  --radius: 0.5rem;
+  --shadow: 0 0.25rem 1rem rgb(0 0 0 / 0.08);
+  --shadow-hover: 0 0.75rem 2rem rgb(0 0 0 / 0.16);
+
+  /* Ширина вмісту і висота шапки */
+  --content-width: 70rem;
+  /* На телефоні меню переноситься під логотип, тож шапка вища.
+     На Етапі 3 (бургер-меню) це значення зменшимо. */
+  --header-height: 6rem;
+}
+
+
+/* ---------- 2. Скидання стилів (reset) ----------
+   Прибираємо різницю між браузерами і незручні типові значення. */
+
+/* box-sizing: border-box — ширина елемента включає padding і рамку
+   (так набагато простіше рахувати розміри) */
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Прибираємо типові зовнішні відступи */
+body,
+h1, h2, h3,
+p,
+ul,
+dl, dd,
+address {
+  margin: 0;
+}
+
+/* Картинки не вилазять за межі батьківського блоку */
+img {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+/* address за замовчуванням курсивом — повертаємо звичайний шрифт */
+address {
+  font-style: normal;
+}
+
+
+/* ---------- 3. Базові стилі та типографіка ---------- */
+
+html {
+  /* Плавна прокрутка при кліку на пункт меню */
+  scroll-behavior: smooth;
+}
+
+/* Хто вимкнув анімації в системі (налаштування доступності) —
+   прокручуємо миттєво і без ефектів */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  line-height: 1.6;               /* міжрядковий інтервал, без одиниць */
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
+
+/* Заголовки: розмір плавно росте з шириною екрана, але в межах min…max.
+   clamp(мінімум, бажане значення, максимум) */
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  color: var(--color-primary);
+  text-wrap: balance;             /* рівномірно ділить заголовок на рядки */
+}
+h1 {
+  font-size: clamp(2rem, 1.2rem + 3.5vw, 3.5rem);
+}
+h2 {
+  font-size: clamp(1.6rem, 1.2rem + 1.8vw, 2.4rem);
+  margin-block-end: var(--space-m);
+}
+h3 {
+  font-size: 1.25rem;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+/* Помітна рамка фокусу для тих, хто ходить сайтом клавішею Tab */
+a:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Кожен розділ: відступи зверху/знизу і обмеження ширини вмісту.
+   Фокус із max(): з боків щонайменше --space-s, а на широкому екрані
+   вміст стоїть по центру шириною не більше --content-width. */
+main > section {
+  padding-block: var(--space-l);
+  padding-inline: max(var(--space-s), (100% - var(--content-width)) / 2);
+  /* Коли переходимо за якорем, розділ зупиняється під шапкою, а не за нею */
+  scroll-margin-top: var(--header-height);
+}
+
+
+/* ---------- 4. Кнопка ---------- */
+
+.button {
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius);
+  background-color: var(--color-accent);
+  color: var(--color-on-dark);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.button:hover {
+  background-color: var(--color-accent-dark);
+  transform: translateY(-2px);    /* трохи «піднімається» */
+}
+.button:focus-visible {
+  outline-color: var(--color-on-dark);
+}
+
+
+/* ---------- 5. Шапка ---------- */
+
+.site-header {
+  /* sticky: шапка прокручується разом зі сторінкою, доки не впреться
+     у верх екрана, і далі залишається там */
+  position: sticky;
+  top: 0;
+  z-index: 10;                    /* поверх решти вмісту */
+
+  display: flex;                  /* елементи в рядок */
+  flex-wrap: wrap;                /* якщо не влазять — переносяться */
+  align-items: center;
+  justify-content: space-between; /* логотип ліворуч, меню праворуч */
+  gap: var(--space-xs) var(--space-m);
+  min-block-size: var(--header-height);
+  padding: var(--space-xs) max(var(--space-s), (100% - var(--content-width)) / 2);
+
+  background-color: var(--color-bg);
+  border-block-end: 1px solid var(--color-border);
+}
+
+.logo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.main-menu {
+  display: flex;
+  gap: var(--space-xs);
+  padding: 0;
+  list-style: none;               /* без крапок-маркерів */
+}
+.main-menu a {
+  display: block;
+  padding: var(--space-xs);
+  color: var(--color-text);
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+.main-menu a:hover {
+  color: var(--color-accent);
+  background-color: var(--color-bg-alt);
+}
+
+
+/* ---------- 6. Розділ «home»: банер ---------- */
+
+.hero {
+  /* Банер на весь екран мінус висота шапки.
+     Перший рядок — запасний варіант (vh), другий — сучасний (dvh),
+     що враховує адресний рядок мобільного браузера. */
+  min-block-size: calc(100vh - var(--header-height));
+  min-block-size: calc(100dvh - var(--header-height));
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;        /* по центру вертикально */
+  align-items: center;            /* по центру горизонтально */
+  gap: var(--space-m);
+  text-align: center;
+
+  /* Фон: напівпрозоре затемнення поверх картинки, щоб білий текст
+     добре читався. Останнє значення — колір на випадок, якщо картинка
+     не завантажиться. */
+  background:
+    linear-gradient(rgb(15 30 50 / 0.65), rgb(15 30 50 / 0.65)),
+    url("../img/hero.svg") center / cover no-repeat,
+    var(--color-primary);
+  color: var(--color-on-dark);
+}
+.hero h1 {
+  color: var(--color-on-dark);
+  max-inline-size: 20ch;          /* не дуже довгі рядки заголовка */
+}
+.hero p {
+  font-size: 1.15rem;
+  max-inline-size: 40rem;
+}
+
+
+/* ---------- 7. Розділ «services»: картки ---------- */
+
+.services {
+  background-color: var(--color-bg-alt);
+}
+
+/* CSS Grid: на телефоні — 1 колонка (типово) */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-m);
+}
+
+.cards article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-block-end: var(--space-m);
+  overflow: hidden;               /* обрізає кути фото по радіусу картки */
+  background-color: var(--color-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.cards article:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.cards img {
+  inline-size: 100%;
+  aspect-ratio: 4 / 3;            /* однакові пропорції всіх фото */
+  object-fit: cover;              /* фото заповнює рамку без спотворень */
+}
+.cards h3,
+.cards p {
+  padding-inline: var(--space-m);
+}
+.cards h3 {
+  margin-block-start: var(--space-xs);
+}
+.cards p {
+  color: var(--color-text-muted);
+}
+
+
+/* ---------- 8. Розділ «contact» ---------- */
+
+.contact > p {
+  margin-block-end: var(--space-l);
+  color: var(--color-text-muted);
+}
+
+.contact-grid {
+  display: grid;
+  gap: var(--space-l);
+}
+
+/* Назва пункту (Telefon, E-Mail…) — дрібно і сірим */
+.contact dt {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+.contact dd {
+  margin-block-end: var(--space-s);
+}
+
+/* Великі зручні для пальця посилання (висота не менше 44px) */
+.contact-list a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;        /* довга пошта не вилазить за екран */
+}
+.contact-list a:hover {
+  color: var(--color-accent-dark);
+}
+
+.hours h3 {
+  margin-block-end: var(--space-s);
+}
+/* Години роботи: назва дня і час в одному рядку */
+.hours dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-xs) var(--space-m);
+}
+.hours dt {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+.hours dd {
+  margin: 0;
+}
+
+
+/* ---------- 9. Підвал ---------- */
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-s);
+  padding: var(--space-m) max(var(--space-s), (100% - var(--content-width)) / 2);
+  background-color: var(--color-primary);
+  color: var(--color-on-dark);
+}
+.footer-menu {
+  display: flex;
+  gap: var(--space-m);
+  padding: 0;
+  list-style: none;
+}
+.site-footer a {
+  color: var(--color-on-dark);
+}
+.site-footer a:focus-visible {
+  outline-color: var(--color-on-dark);
+}
+
+
+/* ---------- 10. Більші екрани ---------- */
+
+/* Від 40em (≈640px): планшет — 2 колонки карток */
+@media (min-width: 40em) {
+  :root {
+    --header-height: 4.5rem;      /* логотип і меню вже в один рядок */
+  }
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Від 64em (≈1024px): комп'ютер — 3 колонки, більші відступи */
+@media (min-width: 64em) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main > section {
+    padding-block: var(--space-xl);
+  }
+}
+
+/* Ефекти «підйому» вимикаємо для тих, хто не хоче анімацій */
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .cards article {
+    transition: none;
+  }
+  .button:hover,
+  .cards article:hover {
+    transform: none;
+  }
+}

@@ -18,13 +18,13 @@
 <body>
 
   <!-- ШАПКА: назва фірми + головне меню -->
-  <header>
+  <header class="site-header">
     <!-- Назва/логотип-заглушка, веде на початок сторінки -->
-    <a href="#home">Hausmeisterservice Muster</a>
+    <a class="logo" href="#home">Hausmeisterservice Muster</a>
 
     <!-- Головна навігація; aria-label дає назву для читачів екрана -->
     <nav aria-label="Hauptmenü">
-      <ul>
+      <ul class="main-menu">
         <li><a href="#home">Start</a></li>
         <li><a href="#services">Leistungen</a></li>
         <li><a href="#contact">Kontakt</a></li>
@@ -36,102 +36,112 @@
   <main>
 
     <!-- РОЗДІЛ 1: титульний банер -->
-    <section id="home">
+    <!-- id — «адреса» для меню, class — «гачок» для стилів -->
+    <section id="home" class="hero">
       <!-- Єдиний h1 на сторінці — головна тема -->
       <h1>Ihr Hausmeister für Haus, Hof und Garten</h1>
       <p>Zuverlässig, pünktlich und zu fairen Preisen – wir kümmern uns um alles, was rund um Ihre Immobilie anfällt.</p>
       <!-- Кнопка-посилання: веде на розділ контактів -->
-      <a href="#contact">Kontakt aufnehmen</a>
+      <a class="button" href="#contact">Kontakt aufnehmen</a>
     </section>
 
     <!-- РОЗДІЛ 2: послуги -->
-    <section id="services">
+    <section id="services" class="services">
       <h2>Unsere Leistungen</h2>
 
-      <!-- Кожна послуга — окрема картка (article) -->
-      <!-- width/height — щоб сторінка не «стрибала» під час завантаження фото -->
-      <!-- loading="lazy" — фото вантажиться, лише коли користувач до нього докрутить -->
-      <article>
-        <img src="img/service-reparatur.svg" alt="Handwerker repariert eine Tür" width="800" height="600" loading="lazy">
-        <h3>Kleinreparaturen</h3>
-        <p>Tropfender Wasserhahn, klemmende Tür oder lockere Steckdose – wir erledigen kleine Reparaturen schnell und sauber.</p>
-      </article>
+      <!-- Обгортка для сітки карток (CSS Grid) -->
+      <div class="cards">
 
-      <article>
-        <img src="img/service-montage.svg" alt="Aufbau eines Schranks" width="800" height="600" loading="lazy">
-        <h3>Montage &amp; Aufbau</h3>
-        <p>Wir bauen Möbel auf, montieren Lampen, Regale und Gardinenstangen.</p>
-      </article>
+        <!-- Кожна послуга — окрема картка (article) -->
+        <!-- width/height — щоб сторінка не «стрибала» під час завантаження фото -->
+        <!-- loading="lazy" — фото вантажиться, лише коли користувач до нього докрутить -->
+        <article>
+          <img src="img/service-reparatur.svg" alt="Handwerker repariert eine Tür" width="800" height="600" loading="lazy">
+          <h3>Kleinreparaturen</h3>
+          <p>Tropfender Wasserhahn, klemmende Tür oder lockere Steckdose – wir erledigen kleine Reparaturen schnell und sauber.</p>
+        </article>
 
-      <article>
-        <img src="img/service-garten.svg" alt="Gepflegter Garten mit frisch gemähtem Rasen" width="800" height="600" loading="lazy">
-        <h3>Gartenpflege</h3>
-        <p>Rasen mähen, Hecken schneiden, Laub entfernen – Ihr Garten bleibt das ganze Jahr gepflegt.</p>
-      </article>
+        <article>
+          <img src="img/service-montage.svg" alt="Aufbau eines Schranks" width="800" height="600" loading="lazy">
+          <h3>Montage &amp; Aufbau</h3>
+          <p>Wir bauen Möbel auf, montieren Lampen, Regale und Gardinenstangen.</p>
+        </article>
 
-      <article>
-        <img src="img/service-winterdienst.svg" alt="Geräumter Gehweg im Winter" width="800" height="600" loading="lazy">
-        <h3>Winterdienst</h3>
-        <p>Schneeräumen und Streuen von Gehwegen und Einfahrten – früh am Morgen, bevor Sie losmüssen.</p>
-      </article>
+        <article>
+          <img src="img/service-garten.svg" alt="Gepflegter Garten mit frisch gemähtem Rasen" width="800" height="600" loading="lazy">
+          <h3>Gartenpflege</h3>
+          <p>Rasen mähen, Hecken schneiden, Laub entfernen – Ihr Garten bleibt das ganze Jahr gepflegt.</p>
+        </article>
 
-      <article>
-        <img src="img/service-reinigung.svg" alt="Sauberes Treppenhaus" width="800" height="600" loading="lazy">
-        <h3>Treppenhausreinigung</h3>
-        <p>Regelmäßige Reinigung von Treppenhäusern, Fluren und Kellerräumen in Mehrfamilienhäusern.</p>
-      </article>
+        <article>
+          <img src="img/service-winterdienst.svg" alt="Geräumter Gehweg im Winter" width="800" height="600" loading="lazy">
+          <h3>Winterdienst</h3>
+          <p>Schneeräumen und Streuen von Gehwegen und Einfahrten – früh am Morgen, bevor Sie losmüssen.</p>
+        </article>
 
-      <article>
-        <img src="img/service-entruempelung.svg" alt="Leerer, aufgeräumter Kellerraum" width="800" height="600" loading="lazy">
-        <h3>Entrümpelung</h3>
-        <p>Wir räumen Keller, Dachböden und Garagen und entsorgen alles fachgerecht.</p>
-      </article>
+        <article>
+          <img src="img/service-reinigung.svg" alt="Sauberes Treppenhaus" width="800" height="600" loading="lazy">
+          <h3>Treppenhausreinigung</h3>
+          <p>Regelmäßige Reinigung von Treppenhäusern, Fluren und Kellerräumen in Mehrfamilienhäusern.</p>
+        </article>
+
+        <article>
+          <img src="img/service-entruempelung.svg" alt="Leerer, aufgeräumter Kellerraum" width="800" height="600" loading="lazy">
+          <h3>Entrümpelung</h3>
+          <p>Wir räumen Keller, Dachböden und Garagen und entsorgen alles fachgerecht.</p>
+        </article>
+      </div>
     </section>
 
     <!-- РОЗДІЛ 3: контакти (усі дані — тестові заглушки) -->
-    <section id="contact">
+    <section id="contact" class="contact">
       <h2>Kontakt</h2>
       <p>Rufen Sie uns an oder schreiben Sie uns – wir melden uns schnell zurück.</p>
 
-      <!-- address — контактні дані власника сайту -->
-      <address>
-        <!-- dl = список «назва → значення» -->
-        <dl>
-          <dt>Telefon</dt>
-          <!-- tel: на телефоні одразу відкриває набір номера -->
-          <dd><a href="tel:+490000000000">+49 000 0000000</a></dd>
+      <!-- Обгортка: на широкому екрані контакти й години стають у дві колонки -->
+      <div class="contact-grid">
+        <!-- address — контактні дані власника сайту -->
+        <address class="contact-list">
+          <!-- dl = список «назва → значення» -->
+          <dl>
+            <dt>Telefon</dt>
+            <!-- tel: на телефоні одразу відкриває набір номера -->
+            <dd><a href="tel:+490000000000">+49 000 0000000</a></dd>
 
-          <dt>E-Mail</dt>
-          <!-- mailto: відкриває поштову програму -->
-          <dd><a href="mailto:info@example.com">info@example.com</a></dd>
+            <dt>E-Mail</dt>
+            <!-- mailto: відкриває поштову програму -->
+            <dd><a href="mailto:info@example.com">info@example.com</a></dd>
 
-          <dt>WhatsApp</dt>
-          <!-- wa.me відкриває чат у WhatsApp (номер без +, пробілів і нуля на початку) -->
-          <dd><a href="https://wa.me/490000000000">Nachricht per WhatsApp</a></dd>
+            <dt>WhatsApp</dt>
+            <!-- wa.me відкриває чат у WhatsApp (номер без +, пробілів і нуля на початку) -->
+            <dd><a href="https://wa.me/490000000000">Nachricht per WhatsApp</a></dd>
 
-          <dt>Adresse</dt>
-          <dd>Musterstraße 1<br>12345 Musterstadt</dd>
-        </dl>
-      </address>
+            <dt>Adresse</dt>
+            <dd>Musterstraße 1<br>12345 Musterstadt</dd>
+          </dl>
+        </address>
 
-      <h3>Öffnungszeiten</h3>
-      <dl>
-        <dt>Montag – Freitag</dt>
-        <dd>8:00 – 18:00 Uhr</dd>
-        <dt>Samstag</dt>
-        <dd>9:00 – 13:00 Uhr</dd>
-        <dt>Sonntag</dt>
-        <dd>geschlossen</dd>
-      </dl>
+        <div class="hours">
+          <h3>Öffnungszeiten</h3>
+          <dl>
+            <dt>Montag – Freitag</dt>
+            <dd>8:00 – 18:00 Uhr</dd>
+            <dt>Samstag</dt>
+            <dd>9:00 – 13:00 Uhr</dd>
+            <dt>Sonntag</dt>
+            <dd>geschlossen</dd>
+          </dl>
+        </div>
+      </div>
     </section>
 
   </main>
 
   <!-- ПІДВАЛ: копірайт і юридичні сторінки -->
-  <footer>
+  <footer class="site-footer">
     <p>&copy; 2026 Hausmeisterservice Muster</p>
     <nav aria-label="Rechtliches">
-      <ul>
+      <ul class="footer-menu">
         <li><a href="impressum.html">Impressum</a></li>
         <li><a href="datenschutz.html">Datenschutz</a></li>
       </ul>

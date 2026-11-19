@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <!-- Фон-заглушка для титульного банера. Замінити справжнім фото на Етапі 7. -->
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9aa5b1"/>
+      <stop offset="1" stop-color="#5f6b78"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <!-- Простий силует будинку, щоб було видно, що це «фото» -->
+  <path d="M500 820 V520 L800 300 L1100 520 V820 Z" fill="#7c8794"/>
+  <rect x="740" y="640" width="120" height="180" fill="#6a7582"/>
+  <text x="1570" y="870" font-family="system-ui, sans-serif" font-size="28" fill="#e5e8eb" text-anchor="end">Platzhalter Titelbild 1600 × 900</text>
+</svg>
