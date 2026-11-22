@@ -472,6 +472,12 @@ main > section {
 .legal h3 {
   margin-block: var(--space-m) var(--space-xs);
 }
+/* h4 — підзаголовки-питання в Datenschutz («Wie erfassen wir Ihre Daten?») */
+.legal h4 {
+  margin-block: var(--space-s) var(--space-xs);
+  font-size: 1.05rem;
+  color: var(--color-primary);
+}
 .legal p,
 .legal ul {
   margin-block-end: var(--space-s);

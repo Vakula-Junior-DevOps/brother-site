@@ -60,6 +60,8 @@
 - [x] `impressum.html` і `datenschutz.html` з тією ж шапкою, футером і стилями, що й головна
 - [x] Структура з плейсхолдерами (`[NAME]`, `[ADRESSE]`, `[HIER TEXT AUS DEM GENERATOR EINFÜGEN]`), **без вигаданих текстів**
 - [ ] 👤 Згенерувати тексти (наприклад, e-recht24.de) з даними брата і вставити
+  - [x] Impressum (e-recht24, 22.11.2026) вставлено; уточнити в брата Wirtschafts-ID і Handwerkskammer
+  - [x] Datenschutzerklärung (e-recht24, 22.11.2026) вставлено; без абзацу про WhatsApp (платний) — вирішити з братом долю кнопки WhatsApp
 - [x] Посилання «Zurück zur Startseite»
 
 **✅ Готово, коли:** обидві сторінки відкриваються з футера і виглядають у стилі сайту.
@@ -127,3 +129,5 @@
 - 2026-11-19 — Етап 6 (частина) — репозиторій публічний, GitHub Pages з main / root: https://vakula-junior-devops.github.io/brother-site/
 - 2026-11-19 — Етап 7 (частина) — фірмові кольори брата: темно-синій #1b2d4f, зелений #6ab023 (декор) і #3b7a1c (текст/кнопки)
 - 2026-11-19 — Етап 7 (частина) — назва FokusHaus і логотип у шапці всіх сторінок, title/description, підвал, favicon FH; контакти поки тестові
+- 2026-11-22 — Етап 4 (👤) — текст Impressum з e-recht24 вставлено в impressum.html
+- 2026-11-22 — Етап 4 (👤) — текст Datenschutzerklärung з e-recht24 вставлено в datenschutz.html (хостер GitHub, без AVV)
