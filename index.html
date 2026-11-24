@@ -9,12 +9,15 @@
   <!-- Назва вкладки і заголовок у результатах пошуку -->
   <title>FokusHaus Hausmeisterservice – Reparaturen, Garten, Winterdienst</title>
   <!-- Короткий опис для результатів пошуку (Google тощо) -->
-  <meta name="description" content="FokusHaus – Ihr zuverlässiger Hausmeisterservice: Kleinreparaturen, Montage, Gartenpflege, Winterdienst, Treppenhausreinigung und Entrümpelung.">
-  <!-- Підключення стилів -->
+  <meta name="description" content="FokusHaus – Ihr zuverlässiger Hausmeisterservice: Gartenpflege, Reinigung, Winterdienst und Kleinreparaturen.">
+  <!-- Фото-тло банера задане в CSS, тому браузер знайшов би його пізно.
+       preload каже: «завантаж одразу», щоб банер з'явився швидше. -->
+  <link rel="preload" href="img/hero.webp" as="image" type="image/webp" fetchpriority="high">
   <!-- Іконка сайту: SVG для сучасних браузерів, PNG як запасний варіант, окрема — для iPhone -->
   <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <!-- Підключення стилів -->
   <link rel="stylesheet" href="css/style.css">
   <!-- Підключення скрипта; defer = виконати після завантаження HTML -->
   <script src="js/main.js" defer></script>
@@ -71,43 +74,62 @@
       <!-- Обгортка для сітки карток (CSS Grid) -->
       <div class="cards">
 
-        <!-- Кожна послуга — окрема картка (article) -->
-        <!-- width/height — щоб сторінка не «стрибала» під час завантаження фото -->
-        <!-- loading="lazy" — фото вантажиться, лише коли користувач до нього докрутить -->
+        <!-- Кожна послуга — окрема картка (article). Порядок і назви — як на фірмовому авто. -->
+        <!-- srcset — браузер сам вибирає фото: 600px для телефона, 1200px для великих/чітких екранів.
+             sizes — підказка, якої ширини буде фото на сторінці (до 35rem, на телефоні вся ширина).
+             width/height — пропорції 4:3, щоб сторінка не «стрибала» під час завантаження.
+             loading="lazy" — фото вантажиться, лише коли користувач до нього докрутить. -->
         <article>
-          <img src="img/service-reparatur.svg" alt="Illustration: tropfender Wasserhahn und Schraubenschlüssel" width="800" height="600" loading="lazy">
-          <h3>Kleinreparaturen</h3>
-          <p>Tropfender Wasserhahn, klemmende Tür oder lockere Steckdose – wir erledigen kleine Reparaturen schnell und sauber.</p>
+          <img src="img/service-garten-600.webp"
+               srcset="img/service-garten-600.webp 600w, img/service-garten-1200.webp 1200w"
+               sizes="(min-width: 70rem) 35rem, (min-width: 40em) 50vw, 100vw"
+               alt="Mitarbeiter von FokusHaus schneidet eine Hecke mit der Heckenschere"
+               width="1200" height="900" loading="lazy">
+          <!-- hgroup — заголовок разом із підзаголовком -->
+          <hgroup>
+            <h3>Gartenpflege</h3>
+            <p>Hecken · Rasen · Laub</p>
+          </hgroup>
+          <p>Hecken schneiden, Rasen mähen, Laub entfernen – Ihr Garten bleibt das ganze Jahr gepflegt.</p>
         </article>
 
         <article>
-          <img src="img/service-montage.svg" alt="Illustration: Schrank und Akkuschrauber" width="800" height="600" loading="lazy">
-          <h3>Montage &amp; Aufbau</h3>
-          <p>Wir bauen Möbel auf, montieren Lampen, Regale und Gardinenstangen.</p>
+          <img src="img/service-reinigung-600.webp"
+               srcset="img/service-reinigung-600.webp 600w, img/service-reinigung-1200.webp 1200w"
+               sizes="(min-width: 70rem) 35rem, (min-width: 40em) 50vw, 100vw"
+               alt="Mitarbeiter von FokusHaus reinigt eine Glasscheibe mit einem Abzieher"
+               width="1200" height="900" loading="lazy">
+          <hgroup>
+            <h3>Reinigung</h3>
+            <p>Gebäude · Treppenhaus · Außenflächen</p>
+          </hgroup>
+          <p>Saubere Treppenhäuser, Flure, Fenster und Außenflächen – regelmäßig oder nach Bedarf.</p>
         </article>
 
         <article>
-          <img src="img/service-garten.svg" alt="Illustration: geschnittene Hecke und Gartenschere" width="800" height="600" loading="lazy">
-          <h3>Gartenpflege</h3>
-          <p>Rasen mähen, Hecken schneiden, Laub entfernen – Ihr Garten bleibt das ganze Jahr gepflegt.</p>
-        </article>
-
-        <article>
-          <img src="img/service-winterdienst.svg" alt="Illustration: Schneeschaufel und Schneeflocken" width="800" height="600" loading="lazy">
-          <h3>Winterdienst</h3>
+          <img src="img/service-winterdienst-600.webp"
+               srcset="img/service-winterdienst-600.webp 600w, img/service-winterdienst-1200.webp 1200w"
+               sizes="(min-width: 70rem) 35rem, (min-width: 40em) 50vw, 100vw"
+               alt="Schneeschaufel räumt Schnee auf einem gepflasterten Gehweg"
+               width="1200" height="900" loading="lazy">
+          <hgroup>
+            <h3>Winterdienst</h3>
+            <p>Schnee räumen · Streuen</p>
+          </hgroup>
           <p>Schneeräumen und Streuen von Gehwegen und Einfahrten – früh am Morgen, bevor Sie losmüssen.</p>
         </article>
 
         <article>
-          <img src="img/service-reinigung.svg" alt="Illustration: Treppe, Eimer und Besen" width="800" height="600" loading="lazy">
-          <h3>Treppenhausreinigung</h3>
-          <p>Regelmäßige Reinigung von Treppenhäusern, Fluren und Kellerräumen in Mehrfamilienhäusern.</p>
-        </article>
-
-        <article>
-          <img src="img/service-entruempelung.svg" alt="Illustration: Umzugskartons auf einer Sackkarre" width="800" height="600" loading="lazy">
-          <h3>Entrümpelung</h3>
-          <p>Wir räumen Keller, Dachböden und Garagen und entsorgen alles fachgerecht.</p>
+          <img src="img/service-reparatur-600.webp"
+               srcset="img/service-reparatur-600.webp 600w, img/service-reparatur-1200.webp 1200w"
+               sizes="(min-width: 70rem) 35rem, (min-width: 40em) 50vw, 100vw"
+               alt="Mitarbeiter von FokusHaus entfernt alte Fliesen mit einem Stemmhammer"
+               width="1200" height="900" loading="lazy">
+          <hgroup>
+            <h3>Kleinreparaturen</h3>
+            <p>Instandhaltung · Montage · Wartung</p>
+          </hgroup>
+          <p>Ob tropfender Wasserhahn, Möbelmontage oder Arbeiten an Wand und Fliesen – wir erledigen Reparaturen schnell und sauber.</p>
         </article>
       </div>
     </section>

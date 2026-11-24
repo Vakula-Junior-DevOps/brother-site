@@ -309,7 +309,7 @@ main > section {
      не завантажиться. */
   background:
     linear-gradient(rgb(20 34 62 / 0.7), rgb(20 34 62 / 0.7)),
-    url("../img/hero.svg") center / cover no-repeat,
+    url("../img/hero.webp") center / cover no-repeat,
     var(--color-primary);
   color: var(--color-on-dark);
 }
@@ -366,6 +366,13 @@ main > section {
 }
 .cards p {
   color: var(--color-text-muted);
+}
+/* Підзаголовок картки («Gebäude · Treppenhaus · Außenflächen») — дрібно, фірмовим зеленим */
+.cards hgroup p {
+  margin-block-start: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
 }
 
 
@@ -515,11 +522,9 @@ main > section {
   }
 }
 
-/* Від 64em (≈1024px): комп'ютер — 3 колонки, більші відступи */
+/* Від 64em (≈1024px): комп'ютер — більші відступи.
+   Карток 4, тому лишаємо 2 колонки (сітка 2×2), а не 3 (тоді одна картка «висіла» б окремо). */
 @media (min-width: 64em) {
-  .cards {
-    grid-template-columns: repeat(3, 1fr);
-  }
   main > section {
     padding-block: var(--space-xl);
   }
