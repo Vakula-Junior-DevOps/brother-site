@@ -411,6 +411,13 @@ main > section {
   color: var(--color-accent-dark);
 }
 
+/* Примітка під номером («Auch per WhatsApp erreichbar»): окремим рядком, дрібніше і сірим */
+.contact-note {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
 .hours h3 {
   margin-block-end: var(--space-s);
 }
