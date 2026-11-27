@@ -110,8 +110,9 @@
 - [x] 👤 Увімкнути Let's Encrypt і перенаправлення HTTP→HTTPS; вибрати основну адресу (з `www` чи без)
   - [x] 27.11.2026: Let's Encrypt (SSL Manager) для `fokushaus.info` + `www`, дійсний до 25.02.2027, автопродовження; HTTPS redirect On (301), OCSP stapling і TLS 1.2+ On
   - [x] основна адреса — `https://fokushaus.info`; `www` → 301 на неї через `.htaccess`; сам `.htaccess` ззовні закритий (403)
-- [ ] 👤 Вимкнути GitHub Pages; за бажання зробити репозиторій приватним
-- [ ] Агент: оновити `README.md` (як оновлювати сайт на Hetzner), за потреби — скрипт розгортання
+- [x] 👤 Вимкнути GitHub Pages; за бажання зробити репозиторій приватним (Pages вимкнено 27.11.2026, адреса github.io → 404)
+- [x] Агент: оновити `README.md` (як оновлювати сайт на Hetzner), за потреби — скрипт розгортання (скрипт не потрібен: оновлення через WinSCP)
+- [ ] 👤 Перевірити пошту брата: лист на `service@fokushaus.info` і відповідь з нього
 
 **✅ Готово, коли:** `https://fokushaus.info` відкриває сайт із замочком HTTPS, `www.fokushaus.info` теж працює, пошта брата працює як раніше.
 
@@ -157,3 +158,4 @@
 - 2026-11-26 — Етап 6 (👤) — Datenschutzerklärung перегенеровано в e-recht24: хостер Hetzner Online GmbH з AVV (GitHub прибрано)
 - 2026-11-27 — Етап 6 (👤) — DNS у Squarespace перемкнено на Hetzner; http://fokushaus.info і www відкривають сайт
 - 2026-11-27 — Етап 6 — HTTPS: Let's Encrypt + HTTPS redirect у konsoleH; `.htaccess`: www → https://fokushaus.info
+- 2026-11-27 — Етап 6 — GitHub Pages вимкнено; README.md переписано під Hetzner (де що живе, DNS, як оновлювати через WinSCP, що робити при збоях)
