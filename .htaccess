@@ -1,0 +1,13 @@
+# Налаштування вебсервера Apache на Hetzner (діє для цієї папки і всіх підпапок).
+# Основна адреса сайту — https://fokushaus.info (без www).
+
+# Увімкнути модуль перезапису адрес (mod_rewrite)
+RewriteEngine On
+
+# Якщо відвідувач прийшов на www.fokushaus.info (великі/малі літери не важливі — NC)...
+RewriteCond %{HTTP_HOST} ^www\.fokushaus\.info$ [NC]
+# ...перенаправити на ту саму сторінку без www, одразу по https.
+# R=301 — «переїхало назавжди» (браузери й Google запам'ятають), L — останнє правило.
+RewriteRule ^ https://fokushaus.info%{REQUEST_URI} [R=301,L]
+
+# Перенаправлення http → https робить сам Hetzner (SSL Manager → HTTPS redirect: On).

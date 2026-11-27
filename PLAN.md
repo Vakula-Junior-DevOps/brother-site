@@ -105,8 +105,11 @@
 - [x] Завантажити сайт на Hetzner у `public_html/` (заглушку `index.htm` видалено); перевірено до перемикання DNS (`curl --resolve`: усі 19 файлів 200, службові файли 404)
   - [ ] 👤 (за бажання) подивитися сайт у браузері через файл `hosts`
 - [x] 👤 Перегенерувати Datenschutz: хостер Hetzner + галочка AVV; агент вставляє текст (e-recht24, 26.11.2026)
-- [ ] 👤 DNS у Squarespace: зменшити TTL, замінити A/CNAME заглушки на адреси Hetzner (MX/TXT не чіпати)
-- [ ] 👤 Увімкнути Let's Encrypt і перенаправлення HTTP→HTTPS; вибрати основну адресу (з `www` чи без)
+- [x] 👤 DNS у Squarespace: зменшити TTL, замінити A/CNAME заглушки на адреси Hetzner (MX/TXT не чіпати)
+  - 27.11.2026: видалено preset «Squarespace Defaults» (4×A, CNAME www, HTTPS); додано `@ A 213.133.104.21`, `@ AAAA 2a01:4f8:d0a:2162::2`, `www CNAME fokushaus.info` (TTL 1 год); MX, SPF, DKIM і `_domainconnect` не чіпали. Зменшення TTL пропущено (старі адреси вели лише на заглушку). 1.1.1.1 і 8.8.8.8 одразу показали нові адреси.
+- [x] 👤 Увімкнути Let's Encrypt і перенаправлення HTTP→HTTPS; вибрати основну адресу (з `www` чи без)
+  - [x] 27.11.2026: Let's Encrypt (SSL Manager) для `fokushaus.info` + `www`, дійсний до 25.02.2027, автопродовження; HTTPS redirect On (301), OCSP stapling і TLS 1.2+ On
+  - [x] основна адреса — `https://fokushaus.info`; `www` → 301 на неї через `.htaccess`; сам `.htaccess` ззовні закритий (403)
 - [ ] 👤 Вимкнути GitHub Pages; за бажання зробити репозиторій приватним
 - [ ] Агент: оновити `README.md` (як оновлювати сайт на Hetzner), за потреби — скрипт розгортання
 
@@ -152,3 +155,5 @@
 - 2026-11-26 — Етап 6 — сайт завантажено на Hetzner через WinSCP (SFTP), перевірено до перемикання DNS
 - 2026-11-26 — Етап 7 (частина) — посилання WhatsApp (wa.me) прибрано; під телефоном примітка «Auch per WhatsApp erreichbar»
 - 2026-11-26 — Етап 6 (👤) — Datenschutzerklärung перегенеровано в e-recht24: хостер Hetzner Online GmbH з AVV (GitHub прибрано)
+- 2026-11-27 — Етап 6 (👤) — DNS у Squarespace перемкнено на Hetzner; http://fokushaus.info і www відкривають сайт
+- 2026-11-27 — Етап 6 — HTTPS: Let's Encrypt + HTTPS redirect у konsoleH; `.htaccess`: www → https://fokushaus.info
